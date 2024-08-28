@@ -1,0 +1,15 @@
+# AdvancedItems
+# Made by AdvancedPlugins.net
+# Version: 1.9.3
+# Release date: 26/08/2024
+
+# Commands, Permissions and guides:
+# https://items.advancedplugins.net/
+
+# Change default messages language. You can modify all messages in AdvancedItems `locale` folder.
+locale: 'en'
+
+randomName:
+  format: "%adjective% %material% of %suffix%"
+
+# That's it for main config.yml file! Configure all custom items in `items` folder.

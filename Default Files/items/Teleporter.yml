@@ -1,0 +1,55 @@
+# Example Item
+item:
+  type: BLAZE_ROD
+  amount: 1
+  # You can generate random names for items
+  # Read more about it here in wiki:
+  name: '&aTeleport Wand!'
+  force-glow: true
+  lore:
+  - '&dLeft Click to Teleport!'
+
+
+settings:
+  # Should items be stackable
+  disabledStacking: false
+  # Should item be used by owner only
+  # Owner is the person which receives item when given with commands
+  ownerOnly: false
+  # Usage limit
+  # Set to -1 to disable
+  usageLimit: -1
+  # Worlds in which this item cannot be used
+  restrictedWorlds:
+    - 'example_world'
+  # Should interactions be disabled? E.g. placing
+  disableInteractions: false
+  # Should inventory interactions with this item be disabled?
+  # If set to true, player won't be able to move this item in inventory
+  disableInventoryInteractions: false
+
+# Give this item to player when they join
+joinSettings:
+  # Should player get this item when they join?
+  giveItem: false
+  # Should the item given with first join only?
+  giveOnlyFirstJoin: false
+  # Inventory slot in which item should be
+  giveItemSlot: 0
+
+# Abilities are effects that can be used with triggers.
+# Read more about abilities here: https://wiki.advancedplugins.net/abilities
+abilities:
+# Triggers are what activate effects
+# Find all triggers here: https://wiki.advancedplugins.net/abilities/triggers
+# In this case, when a player or mob attacks another entity, it will activate the effects in this trigger
+  SWING:
+    # Find all effects here: https://wiki.advancedplugins.net/abilities/effects
+    cooldown: 10
+    effects: 
+      - 'PARTICLE:PORTAL:500:1 @EyeHeight'
+      - 'PLAY_SOUND_OUTLOUD:ENTITY_ENDERMAN_TELEPORT'
+      - 'TELEPORT @BlockInDistance{distance=20}'
+      - 'ACTION_BAR:&eWand Cooldown! &7(10s) &e...'
+      
+      

@@ -1,0 +1,8 @@
+prefix: "&c[AdvancedItems]&r"
+commands:
+  playerOffline: '%prefix% &cSpecified player is offline!'
+  noPermission: '%prefix% &cNo permission to execute this command.'
+
+items:
+  ownerOnly: '%prefix% &cOnly owner may use this item.'
+  usageLimit: '%prefix% &cThis item has no uses left!'

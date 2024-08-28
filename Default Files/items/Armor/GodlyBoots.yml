@@ -1,0 +1,60 @@
+# Example Item
+item:
+  type: DIAMOND_BOOTS
+  amount: 1
+  # You can generate random names for items
+  # Read more about it here in wiki:
+  name: '&aGodly Boots'
+  lore:
+  - '&7Created by gods themselves'
+  - '&7and sent to our world to'
+  - '&7conquer and cause mayhem.'
+  enchantments:
+  - 'protection:4'
+  - 'unbreaking:3'
+
+settings:
+  # Should items be stackable
+  disabledStacking: false
+  # Should item be used by owner only
+  # Owner is the person which receives item when given with commands
+  ownerOnly: false
+  # Usage limit
+  # Set to -1 to disable
+  usageLimit: -1
+  # Worlds in which this item cannot be used
+  restrictedWorlds:
+    - 'example_world'
+  # Should interactions be disabled? E.g. placing
+  disableInteractions: false
+  # Should inventory interactions with this item be disabled?
+  # If set to true, player won't be able to move this item in inventory
+  disableInventoryInteractions: false
+
+# Give this item to player when they join
+joinSettings:
+  # Should player get this item when they join?
+  giveItem: false
+  # Should the item given with first join only?
+  giveOnlyFirstJoin: false
+  # Inventory slot in which item should be
+  giveItemSlot: 0
+
+# Abilities are effects that can be used with triggers.
+# Read more about abilities here: https://wiki.advancedplugins.net/abilities
+abilities:
+# Triggers are what activate effects
+# Find all triggers here: https://wiki.advancedplugins.net/abilities/triggers
+# In this case, when a player or mob attacks another entity, it will activate the effects in this trigger
+  EFFECT_STATIC:
+    conditions: 
+    - '%advanceditems type% = GodlyBoots : %allow%'
+    - '%advanceditems chestplate type% = GodlyChestplate : %allow%'
+    - '%advanceditems leggings type% = GodlyLeggings : %allow%'
+    - '%advanceditems helmet type% = GodlyHelmet : %allow%'
+    # Find all effects here: https://wiki.advancedplugins.net/abilities/effects
+    effects:
+      - 'MESSAGE:&6Godly Armor Set&7 has been <if starts>&aEquipped</if starts><if ends>&cUnequipped</if ends>'
+      - 'POTION:SPEED:0'
+      - 'POTION:HEALTH_BOOST:0'
+      - 'POTION:DAMAGE_RESISTANCE:0'
